@@ -11,8 +11,17 @@ namespace IoTSmartFarming
 {
 
 
-    public partial class Adminfarmersmanagement
+    public partial class Userprofile
     {
+
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
         /// TextBox1 control.
@@ -24,13 +33,49 @@ namespace IoTSmartFarming
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
         /// <summary>
-        /// LinkButton4 control.
+        /// TextBox2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton4;
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+
+        /// <summary>
+        /// TextBox3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+
+        /// <summary>
+        /// TextBox4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+
+        /// <summary>
+        /// DropDownList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+
+        /// <summary>
+        /// TextBox6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox6;
 
         /// <summary>
         /// TextBox7 control.
@@ -42,51 +87,6 @@ namespace IoTSmartFarming
         protected global::System.Web.UI.WebControls.TextBox TextBox7;
 
         /// <summary>
-        /// LinkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-
-        /// <summary>
-        /// LinkButton2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton2;
-
-        /// <summary>
-        /// LinkButton3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton3;
-
-        /// <summary>
-        /// TextBox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
-
-        /// <summary>
-        /// TextBox11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
-
-        /// <summary>
         /// TextBox5 control.
         /// </summary>
         /// <remarks>
@@ -94,15 +94,6 @@ namespace IoTSmartFarming
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox5;
-
-        /// <summary>
-        /// TextBox4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
 
         /// <summary>
         /// TextBox8 control.
@@ -123,22 +114,31 @@ namespace IoTSmartFarming
         protected global::System.Web.UI.WebControls.TextBox TextBox9;
 
         /// <summary>
-        /// Button5 control.
+        /// TextBox10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
+        protected global::System.Web.UI.WebControls.TextBox TextBox10;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
         /// GridView1 control.

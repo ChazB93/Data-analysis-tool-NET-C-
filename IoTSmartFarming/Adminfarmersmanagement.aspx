@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Adminfarmersmanagement.aspx.cs" Inherits="IoTSmartFarming.Adminfarmersmanagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+            //$('.table1').DataTable;
+        });
+     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container-fluid">
@@ -39,10 +45,10 @@
                                 <div class="input-group">
                                  <asp:TextBox  CssClass="form-control" ID="TextBox1" 
                                      runat="server" placeholder="Username"></asp:TextBox>
-                                <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Go" />
-
+                                    <asp:LinkButton class="btn btn-primary" ID="LinkButton4" runat="server" OnClick="LinkButton4_Click"><i class="fas fa-check-circle"></i></asp:LinkButton>
+                             
                             </div>
-                                </div>
+                          </div>
                         </div>
 
                            <div class="col-md-6">
@@ -52,12 +58,12 @@
                                  <asp:TextBox  CssClass="form-control mr-1" ID="TextBox7" 
                                      runat="server" placeholder="Status" ReadOnly="True"></asp:TextBox>
 
-                                    <asp:LinkButton class="btn btn-primary mr-1" ID="LinkButton1" runat="server">
+                                    <asp:LinkButton class="btn btn-success mr-1" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">
                                         <i class="fas fa-check-circle"></i></asp:LinkButton>
-                                    <asp:LinkButton class="btn btn-warning mr-1" ID="LinkButton2" runat="server">
+                                    <asp:LinkButton class="btn btn-warning mr-1" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">
                                         <i class="far fa-pause-circle"></i></asp:LinkButton>
 
-                                <asp:LinkButton class="btn btn-danger mr-1" ID="LinkButton3" runat="server">
+                                <asp:LinkButton class="btn btn-danger mr-1" ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">
                                         <i class="far fa-window-close"></i></asp:LinkButton>
                             </div> 
                            </div>
@@ -99,7 +105,7 @@
                            <label>Date of Birth</label>
                             <div class="form-group">
                                  <asp:TextBox  CssClass="form-control" ID="TextBox5" 
-                                     runat="server" placeholder="Member ID" TextMode="Date" ReadOnly="True"></asp:TextBox>
+                                     runat="server" placeholder="DoB" ReadOnly="True"></asp:TextBox>
 
                             </div> 
 
@@ -108,11 +114,11 @@
 
                          <div class="col-md-3">
                           
-                            <label>State</label>
+                            <label>Province</label>
                             <div class="form-group">
                                 
                                  <asp:TextBox  CssClass="form-control" ID="TextBox4" 
-                                     runat="server" placeholder="City" ReadOnly="True"></asp:TextBox>
+                                     runat="server" placeholder="Province" ReadOnly="True"></asp:TextBox>
 
                             </div>
                         </div>
@@ -145,7 +151,7 @@
                         <div class="col">
                          
                     <div class="form-group">
-                        <asp:Button class="btn btn-lg btn-block btn-danger"  ID="Button5" runat="server" Text="Delete User Permanently" />
+                        <asp:Button class="btn btn-lg btn-block btn-danger"  ID="Button5" runat="server" Text="Delete User Permanently" OnClick="Button5_Click" />
                                
                             </div>
                                 
@@ -185,8 +191,22 @@
 
                     </div>
                     <div class="row">
+                        <!--Hold the data from database -->
+                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:IoTSmartFarmingConnectionString %>" SelectCommand="SELECT * FROM [Farmer]"></asp:SqlDataSource>
                         <div class="col">
-                            <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                           
+                            <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Username" DataSourceID="SqlDataSource1">
+                                <Columns>
+                                    <asp:BoundField DataField="Firstname" HeaderText="First Name" SortExpression="Firstname" />
+                                    <asp:BoundField DataField="Lastname" HeaderText="Last Name" SortExpression="Lastname" />
+                                    <asp:BoundField DataField="DoB" HeaderText="Date of Birth" ReadOnly="True" SortExpression="DoB" />
+                                    <asp:BoundField DataField="Province" HeaderText="Province" SortExpression="Province" />
+                                    <asp:BoundField DataField="City" HeaderText="City" SortExpression="City" />
+                                    <asp:BoundField DataField="Phone" HeaderText="Phone" SortExpression="Phone" />
+                                    <asp:BoundField DataField="Username" HeaderText="Username" ReadOnly="True" SortExpression="Username" />
+                                    <asp:BoundField DataField="account_status" HeaderText="Account Status" SortExpression="account_status" />
+                                </Columns>
+                            </asp:GridView>
 
                         </div>
 
