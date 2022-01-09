@@ -1,0 +1,24 @@
+﻿.footerlinks {
+    color: whitesmoke;
+    text-decoration: none !important;
+}
+
+    .footerlinks:hover {
+        color: #ffd800;
+    }
+
+#footer1 {
+    background: gray;
+}
+
+#footer2 {
+    background: chocolate;
+}
+
+.navbar-brand{
+    margin-left: 20px;
+}
+
+.img1{
+    margin: 100%;
+}
