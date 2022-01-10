@@ -1,5 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Userprofile.aspx.cs" Inherits="IoTSmartFarming.Userprofile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+            //$('.table1').DataTable;
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="container-fluid">
@@ -36,103 +42,96 @@
                         </div>
 
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
+ <div class="row">
+                         <div class="col-md-6">
                           
-                            <label>Full Name</label>
+                            <label>Username</label>
                             <div class="form-group">
+                                <div class="input-group">
                                  <asp:TextBox  CssClass="form-control" ID="TextBox1" 
-                                     runat="server" placeholder="Full Name"></asp:TextBox>
-
+                                     runat="server" placeholder="Username"></asp:TextBox>
+                             
                             </div>
+                          </div>
                         </div>
 
                          <div class="col-md-6">
-                           <label>Date of Birth</label>
+                           <label>Telephone</label>
+                            <div class="form-group">
+                                 <asp:TextBox  CssClass="form-control" ID="TextBox6" 
+                                     runat="server" placeholder="Number"></asp:TextBox>
+
+                            </div> 
+
+                        </div>
+
+                        
+
+
+                    </div>
+
+                    <div class="row">
+                           <div class="col-md-6">
+                           <label>First Name</label>
                             <div class="form-group">
                                  <asp:TextBox  CssClass="form-control" ID="TextBox2" 
-                                     runat="server" TextMode="Date"></asp:TextBox>
+                                     runat="server" placeholder="First Name"></asp:TextBox>
+
+                            </div> 
+
+                        </div>
+
+                          <div class="col-md-6">
+                           <label>Last Name</label>
+                            <div class="form-group">
+                                 <asp:TextBox  CssClass="form-control" ID="TextBox11" 
+                                     runat="server" placeholder="Last Name"></asp:TextBox>
 
                             </div> 
 
                         </div>
 
                     </div>
+
 
                     <div class="row">
-                        <div class="col-md-6">
-                          
-                            <label>Contact Number</label>
-                            <div class="form-group">
-                                 <asp:TextBox  CssClass="form-control" ID="TextBox3" 
-                                     runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
-
-                            </div>
-                        </div> 
-
-                         <div class="col-md-6">
-                           <label>Email ID</label>
-                            <div class="form-group">
-                                 <asp:TextBox  CssClass="form-control" ID="TextBox4" 
-                                     runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
-
-                            </div> 
-
-                        </div>
-
-                    </div>
-
-                     <div class="row">
-                        <div class="col-md-4">
-                          
-                            <label>State</label>
-                            <div class="form-group">
-                                <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
-                                    <asp:ListItem Text="Select" Value="Select"/>
-                                    <asp:ListItem Text="Burundi" Value="Burundi"/>
-                                    <asp:ListItem Text="Rwanda" Value="Rwanda"/>
-                                    <asp:ListItem Text="Tanzania" Value="Tanzania"/>
-                                    <asp:ListItem Text="Kenya" Value="Kenya"/>
-                                    <asp:ListItem Text="Uganda" Value="Uganda"/>
-                                    <asp:ListItem Text="South Sudan" Value="South Sudan"/>
-                                </asp:DropDownList>
-
-                            </div>
-                        </div> 
-
-                         <div class="col-md-4">
-                           <label>City</label>
-                            <div class="form-group">
-                                 <asp:TextBox  class="form-control" ID="TextBox6" 
-                                     runat="server" placeholder="city"></asp:TextBox>
-
-                            </div> 
-
-                        </div>
-
                           <div class="col-md-4">
-                           <label>Pin Code</label>
-                            <div class="form-group">
-                                 <asp:TextBox  class="form-control" ID="TextBox7" 
-                                     runat="server" placeholder="Pin Code" TextMode="Number"></asp:TextBox>
-
-                            </div> 
-
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                        <label>Full Address</label>
+                           <label>Date of Birth</label>
                             <div class="form-group">
                                  <asp:TextBox  CssClass="form-control" ID="TextBox5" 
-                                     runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                     runat="server" placeholder="DoB"></asp:TextBox>
+
                             </div> 
 
-                    </div>
                         </div>
+
+
+                         <div class="col-md-4">
+                          
+                            <label>Province</label>
+                            <div class="form-group">
+                                
+                                 <asp:TextBox  CssClass="form-control" ID="TextBox4" 
+                                     runat="server" placeholder="Province"></asp:TextBox>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                           <label>City</label>
+                            <div class="form-group">
+                                 <asp:TextBox  CssClass="form-control" ID="TextBox3" 
+                                     runat="server" placeholder="City"></asp:TextBox>
+
+                            </div> 
+
+                        </div>
+
+                       
+                       
+
+
+                    </div>
 
                        <div class="row">
                            
@@ -147,7 +146,7 @@
                     <div class="row">
                         <div class="col-md-4">
                           
-                            <label>User ID</label>
+                            <label>Username</label>
                             <div class="form-group">
                                  <asp:TextBox  class="form-control" ID="TextBox8" 
                                      runat="server" placeholder="User ID" ReadOnly="True"></asp:TextBox>
@@ -159,7 +158,7 @@
                            <label>Old Password</label>
                             <div class="form-group">
                                  <asp:TextBox  class="form-control" ID="TextBox9" 
-                                     runat="server" placeholder="Password" TextMode="Password" ReadOnly="True"></asp:TextBox>
+                                     runat="server" placeholder="Old Password" ReadOnly="True"></asp:TextBox>
 
                             </div> 
 
@@ -179,14 +178,20 @@
 
                     <div class="row">
                         
-                        <div class="col-8 mx-auto">
-                            <center>
+                        <div class="col-md-6">
+                        
                         <div class="form-group">
                         <asp:Button class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
-
                     </div>
-                            </center>
-                           
+                     
+                   </div>
+
+                        <div class="col-md-6">
+                        
+                        <div class="form-group">
+                        <asp:Button class="btn btn-danger btn-block btn-lg" ID="Button2" runat="server" Text="Delete" OnClick="Button1_Click" />
+                    </div>
+                     
                    </div>
 
                 </div>
@@ -205,7 +210,7 @@
                     <div class="row">
                         <div class="col">
                             <center>
-                         <img width="100px" src="images/books1.png" />
+                         <img width="100px" src="images/sensor.jpg" />
 
                             </center>
 
@@ -215,8 +220,8 @@
                     <div class="row">
                         <div class="col">
                             <center>
-                        <h4>Your Issued Books</h4>
-                                <asp:Label class="badge badge-pill badge-primary" ID="Label2" runat="server" Text="Info about book due date"></asp:Label>
+                        <h4>Your connection</h4>
+                                <asp:Label class="badge badge-pill badge-primary" ID="Label2" runat="server" Text="Info about your sensors"></asp:Label>
                             </center>
 
                         </div>
@@ -232,7 +237,7 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
+                            <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" OnRowDataBound="GridView1_RowDataBound"></asp:GridView>
 
                         </div>
 

@@ -101,7 +101,7 @@ namespace IoTSmartFarming
 
         protected void LinkButton5_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Userlogin.aspx");
+            Response.Redirect("Userprofile.aspx");
         }
     }
 }
