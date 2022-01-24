@@ -17,7 +17,7 @@ namespace IoTSmartFarming
                 if ("".Equals(Session["role"]))
                 {
                     LinkButton2.Visible = true; //user login link button
-
+                    LinkButton1.Visible = false; //user data visualization link button
 
                     LinkButton4.Visible = false; //logout link button
                     LinkButton5.Visible = false; //hello user link button
@@ -30,6 +30,7 @@ namespace IoTSmartFarming
                 else if ("user".Equals(Session["role"]))
                 {
                     LinkButton2.Visible = false; //user login link button
+                    LinkButton1.Visible = true; //user data visualization link button
 
                     LinkButton4.Visible = true; //logout link button
                     LinkButton5.Visible = true; //hello user link button
@@ -44,6 +45,7 @@ namespace IoTSmartFarming
                 else if ("admin".Equals(Session["role"]))
                 {
                     LinkButton2.Visible = false; //user login link button
+                    LinkButton1.Visible = true; //user data visualization link button
 
                     LinkButton4.Visible = true; //logout link button
                     LinkButton5.Visible = true; //hello user link button
@@ -87,6 +89,7 @@ namespace IoTSmartFarming
             Session["role"] = "";
             Session["status"] = "";
 
+            LinkButton1.Visible = false; //user login link button
             LinkButton2.Visible = true; //user login link button
 
             LinkButton4.Visible = false; //logout link button
@@ -102,6 +105,11 @@ namespace IoTSmartFarming
         protected void LinkButton5_Click(object sender, EventArgs e)
         {
             Response.Redirect("Userprofile.aspx");
+        }
+
+        protected void LinkButton1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("DataVisualization.aspx");
         }
     }
 }

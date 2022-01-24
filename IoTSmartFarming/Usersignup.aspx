@@ -71,7 +71,7 @@
                     <div class="row">
                         <div class="col-md-4">
                           
-                            <label>State</label>
+                            <label>Province</label>
                             <div class="form-group">
                                 <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
                                     <asp:ListItem Text="Select" Value="Select"/>

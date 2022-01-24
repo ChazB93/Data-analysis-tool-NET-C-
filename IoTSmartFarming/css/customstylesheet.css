@@ -22,3 +22,9 @@
 .img1{
     margin: 100%;
 }
+
+.carousel-item {
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-bottom: 20px;
+}

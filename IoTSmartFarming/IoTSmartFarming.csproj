@@ -76,6 +76,7 @@
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
+    <Content Include="DataVisualization.aspx" />
     <Content Include="fontawesome\attribution.js" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -1726,15 +1727,23 @@
     <Content Include="homepage.aspx" />
     <Content Include="images\1.png" />
     <Content Include="images\adminuser.png" />
+    <Content Include="images\baro.jpg" />
+    <Content Include="images\baroicon.jpg" />
     <Content Include="images\book-online.png" />
     <Content Include="images\books.png" />
     <Content Include="images\books1.png" />
+    <Content Include="images\da2.png" />
+    <Content Include="images\data1.jpg" />
+    <Content Include="images\data2.png" />
+    <Content Include="images\data3.jpg" />
     <Content Include="images\defaulters-list.png" />
     <Content Include="images\digital-inventory.png" />
     <Content Include="images\generaluser.png" />
+    <Content Include="images\humicon.jpg" />
     <Content Include="images\icon.png" />
     <Content Include="images\img1.jpg" />
     <Content Include="images\library.png" />
+    <Content Include="images\pressureicon.jpg" />
     <Content Include="images\publisher.png" />
     <Content Include="images\R.jpg" />
     <Content Include="images\real.jpg" />
@@ -1742,6 +1751,10 @@
     <Content Include="images\search-online.png" />
     <Content Include="images\sensor.jpg" />
     <Content Include="images\sign-up.png" />
+    <Content Include="images\soil.jpg" />
+    <Content Include="images\soilicon.png" />
+    <Content Include="images\temperature.jpg" />
+    <Content Include="images\tempicon.jpg" />
     <Content Include="images\writer.png" />
     <Content Include="Userlogin.aspx" />
     <Content Include="Userprofile.aspx" />
@@ -1763,6 +1776,13 @@
     </Compile>
     <Compile Include="Adminlogin.aspx.designer.cs">
       <DependentUpon>Adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataVisualization.aspx.cs">
+      <DependentUpon>DataVisualization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataVisualization.aspx.designer.cs">
+      <DependentUpon>DataVisualization.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>

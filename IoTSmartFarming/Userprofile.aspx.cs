@@ -80,7 +80,7 @@ namespace IoTSmartFarming
                 cmd.Parameters.AddWithValue("@Firstname", TextBox2.Text.Trim());
                 cmd.Parameters.AddWithValue("@Lastname", TextBox11.Text.Trim());
                 cmd.Parameters.AddWithValue("@Password", password);
-                cmd.Parameters.AddWithValue("@Province", TextBox4.Text.Trim());
+                cmd.Parameters.AddWithValue("@Province", DropDownList1.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@City", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@Phone", TextBox6.Text.Trim());
                 cmd.Parameters.AddWithValue("@DoB", TextBox5.Text.Trim());
@@ -123,8 +123,9 @@ namespace IoTSmartFarming
                 TextBox6.Text = dt.Rows[0]["Phone"].ToString();
                 TextBox2.Text = dt.Rows[0]["Firstname"].ToString();
                 TextBox11.Text = dt.Rows[0]["Lastname"].ToString();
-                TextBox4.Text = dt.Rows[0]["Province"].ToString();
-                // DropDownList.SelectedValue = dt.Rows[4]["Province"].ToString().Trim();
+                //TextBox4.Text = dt.Rows[0]["Province"].ToString();
+                TextBox5.Text = dt.Rows[0]["DoB"].ToString();
+                DropDownList1.SelectedValue = dt.Rows[0]["Province"].ToString().Trim();
                 TextBox3.Text = dt.Rows[0]["City"].ToString();
                 TextBox8.Text = dt.Rows[0]["Username"].ToString();
                 TextBox9.Text = dt.Rows[0]["Password"].ToString();

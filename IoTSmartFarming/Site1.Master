@@ -55,9 +55,6 @@
       </ul>
 
       <ul class="navbar-nav mr-auto">  
-        <li class="nav-item active">
-      <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" Visible="False"> View Data </asp:LinkButton>
-        </li>
           <li class="nav-item active">  
       <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server" OnClick="LinkButton1_Click"> Login </asp:LinkButton>
         </li>
@@ -66,6 +63,10 @@
         </li>
           <li class="nav-item active">
       <asp:LinkButton class="nav-link" ID="LinkButton5" runat="server" Visible="False" OnClick="LinkButton5_Click"> Hello User </asp:LinkButton>
+        </li>
+
+          <li class="nav-item active">
+      <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" Visible="False" OnClick="LinkButton1_Click1"> View Data </asp:LinkButton>
         </li>
 
 

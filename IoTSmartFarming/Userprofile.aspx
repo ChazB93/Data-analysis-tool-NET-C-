@@ -99,23 +99,40 @@
                            <label>Date of Birth</label>
                             <div class="form-group">
                                  <asp:TextBox  CssClass="form-control" ID="TextBox5" 
-                                     runat="server" placeholder="DoB"></asp:TextBox>
+                                     runat="server" TextMode="Date"></asp:TextBox>
 
                             </div> 
 
                         </div>
 
-
-                         <div class="col-md-4">
+                        <div class="col-md-4">
                           
-                            <label>Province</label>
+                            <label>State</label>
                             <div class="form-group">
-                                
-                                 <asp:TextBox  CssClass="form-control" ID="TextBox4" 
-                                     runat="server" placeholder="Province"></asp:TextBox>
+                                <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
+                                    <asp:ListItem Text="Select" Value="Select"/>
+                                    <asp:ListItem Text="Cankuzo" Value="Cankuzo"/>
+                                    <asp:ListItem Text="Gitega" Value="Gitega"/>
+                                    <asp:ListItem Text="Rutana" Value="Rutana"/>
+                                    <asp:ListItem Text="Ruyigi" Value="Ruyigi"/>
+                                    <asp:ListItem Text="Karuzi" Value="Karuzi"/>
+                                    <asp:ListItem Text="Kayanza" Value="Kayanza"/>
+                                    <asp:ListItem Text="Kirundo" Value="Kirundo"/>
+                                    <asp:ListItem Text="Muyinga" Value="Muyinga"/>
+                                    <asp:ListItem Text="Ngozi" Value="Ngozi"/>
+                                    <asp:ListItem Text="Bururi" Value="Bururi"/>
+                                    <asp:ListItem Text="Makamba" Value="Makamba"/>
+                                    <asp:ListItem Text="Rumonge" Value="Rumonge"/>
+                                    <asp:ListItem Text="Bubanza" Value="Bubanza"/>
+                                     <asp:ListItem Text="Bujumbura" Value="Bujumbura"/>
+                                    <asp:ListItem Text="Bujumbura Rural" Value="Bujumbura Rural"/>
+                                    <asp:ListItem Text="Cibitoke" Value="Cibitoke"/>
+                                    <asp:ListItem Text="Muramvya" Value="Muramvya"/>
+                                    <asp:ListItem Text="Mwaro" Value="Mwaro"/>
+                                </asp:DropDownList>
 
                             </div>
-                        </div>
+                            </div>
 
                         <div class="col-md-4">
                            <label>City</label>
