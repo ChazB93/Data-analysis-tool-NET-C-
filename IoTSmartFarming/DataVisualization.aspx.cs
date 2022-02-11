@@ -15,114 +15,146 @@ namespace IoTSmartFarming
         string strcon = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            getTemperatureData();
-            getHumidityData();
-            getPressureData();
-            qualityOfSoilData();
-            GridView1.DataBind();
+            showTemperature();
+            showHumidity();
+            showPressure();
+            showQualityOfSoil();
+            //GridView1.DataBind();
+
         }
-        void getTemperatureData()
+        private decimal getTemperature()
         {
-            try
-            {
                 SqlConnection conn = new SqlConnection(strcon);
                 if (conn.State == System.Data.ConnectionState.Closed)
                 {
                     conn.Open();
                 }
+            decimal temperature=0;
                 SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Temperature ORDER BY time desc", conn);
                 SqlDataReader dr = cmd.ExecuteReader(); 
                 while (dr.Read())
                 {
-                    Label1.Text = dr.GetValue(0).ToString();
+                temperature = dr.GetDecimal(0);
                     
                 }
-                GridView1.DataBind();
+                //GridView1.DataBind();
+         return temperature;
+        }
 
 
+        private void showTemperature()
+        {
+            decimal actTemperature = getTemperature();
+            temperatureLabel.Text = actTemperature.ToString();
 
-            }
-            catch (Exception ex)
+            if (actTemperature > 40 || actTemperature < 10)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                Label2.Visible = false;
+                Label3.Visible = true;
+
+
             }
         }
-        void getHumidityData()
+        private decimal getHumidity()
         {
-            try
-            {
+           
                 SqlConnection conn = new SqlConnection(strcon);
                 if (conn.State == System.Data.ConnectionState.Closed)
                 {
                     conn.Open();
                 }
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Humidity ORDER BY time desc", conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    Label4.Text = dr.GetValue(0).ToString();
-
-                }
-                GridView1.DataBind();
-
-
-
-            }
-            catch (Exception ex)
+               decimal humidity = 20;
+          
+            SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Humidity ORDER BY time desc", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            humidity = dr.GetDecimal(0);
             }
+            return humidity;
         }
-        void getPressureData()
+
+        private void showHumidity()
         {
-            try
+            decimal actHumidity = getHumidity();
+           humidityLabel.Text = actHumidity.ToString();
+
+            if(actHumidity>100 || actHumidity < 10)
             {
+                Label5.Visible = false;
+                Label6.Visible = true;
+
+
+            }
+
+        }
+        private decimal getPressure()
+        {
+          
                 SqlConnection conn = new SqlConnection(strcon);
                 if (conn.State == System.Data.ConnectionState.Closed)
                 {
                     conn.Open();
                 }
+            decimal pressure = 0;
                 SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Pressure ORDER BY time desc", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    Label7.Text = dr.GetValue(0).ToString();
+                pressure = dr.GetDecimal(0);
 
                 }
-                GridView1.DataBind();
+            // GridView1.DataBind();
+            return pressure;
+        }
 
 
+        private void showPressure()
+        {
+            decimal actPressure = getPressure();
+            pressureLabel.Text = actPressure.ToString();
 
-            }
-            catch (Exception ex)
+            if (actPressure > 30 || actPressure < 10)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                Label8.Visible = false;
+                Label9.Visible = true;
+
+
             }
         }
-        void qualityOfSoilData()
+        private decimal getQualityOfSoil()
         {
-            try
-            {
+          
                 SqlConnection conn = new SqlConnection(strcon);
                 if (conn.State == System.Data.ConnectionState.Closed)
                 {
                     conn.Open();
                 }
+            decimal quality = 0;
                 SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from SoilMoisture ORDER BY time desc", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    Label10.Text = dr.GetValue(0).ToString();
+                quality = dr.GetDecimal(0);
 
                 }
-                GridView1.DataBind();
+            //GridView1.DataBind();
 
 
-
+            return quality;
             }
-            catch (Exception ex)
+
+        private void showQualityOfSoil()
+        {
+            decimal actQuality = getQualityOfSoil();
+            qualityLabel.Text = actQuality.ToString();
+
+            if (actQuality > 30 || actQuality < 10)
             {
-                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                Label11.Visible = false;
+                Label12.Visible = true;
+
+
             }
         }
     }

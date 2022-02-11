@@ -74,6 +74,7 @@
     <Content Include="bootstrap\js\jquery-3.3.1.slim.min.js" />
     <Content Include="bootstrap\js\popper.min.js" />
     <Content Include="css\customstylesheet.css" />
+    <Content Include="dataanalytics.aspx" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
     <Content Include="DataVisualization.aspx" />
@@ -1756,6 +1757,7 @@
     <Content Include="images\temperature.jpg" />
     <Content Include="images\tempicon.jpg" />
     <Content Include="images\writer.png" />
+    <Content Include="stabilizesituation.aspx" />
     <Content Include="Userlogin.aspx" />
     <Content Include="Userprofile.aspx" />
     <Content Include="Usersignup.aspx" />
@@ -1776,6 +1778,13 @@
     </Compile>
     <Compile Include="Adminlogin.aspx.designer.cs">
       <DependentUpon>Adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dataanalytics.aspx.cs">
+      <DependentUpon>dataanalytics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dataanalytics.aspx.designer.cs">
+      <DependentUpon>dataanalytics.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataVisualization.aspx.cs">
       <DependentUpon>DataVisualization.aspx</DependentUpon>
@@ -1798,6 +1807,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="stabilizesituation.aspx.cs">
+      <DependentUpon>stabilizesituation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stabilizesituation.aspx.designer.cs">
+      <DependentUpon>stabilizesituation.aspx</DependentUpon>
     </Compile>
     <Compile Include="Userlogin.aspx.cs">
       <DependentUpon>Userlogin.aspx</DependentUpon>

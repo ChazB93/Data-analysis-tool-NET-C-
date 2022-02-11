@@ -13,22 +13,15 @@
                             <img width="50px" src="images/tempicon.jpg" />
                                 
                         <h4>Temperature</h4>
-                                    <asp:Label ID="Label1" runat="server" Text="20"></asp:Label> <br />
+                                    <asp:Label ID="temperatureLabel" runat="server" Text=""></asp:Label> <br />
                                 <asp:Label class="badge badge-pill badge-primary" ID="Label2" runat="server" Text="The temperature is good" Visible="True"></asp:Label><br />
                                 <asp:Label class="badge badge-pill badge-danger" ID="Label3" runat="server" Text="The temperature is bad" Visible="False"></asp:Label>
-                                
-                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="time" DataSourceID="SqlDataSource1">
-                                    <Columns>
-                                        <asp:BoundField DataField="sensorID" HeaderText="sensorID" SortExpression="sensorID" />
-                                        <asp:BoundField DataField="time" HeaderText="time" ReadOnly="True" SortExpression="time" />
-                                        <asp:BoundField DataField="value" HeaderText="value" SortExpression="value" />
-                                    </Columns>
-                                </asp:GridView>
+                                 
                             
 
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SensorDataConnectionString %>" SelectCommand="SELECT * FROM [Temperature]"></asp:SqlDataSource>
                             
-
+                                  
                             </center>
                         </div>
 
@@ -38,7 +31,7 @@
                                 <img width="50px" src="images/humicon.jpg" />
                                 <center>
                         <h4>Humidity</h4>
-                                    <asp:Label ID="Label4" runat="server" Text="12"></asp:Label> <br />
+                                    <asp:Label  ID="humidityLabel" runat="server" Text="" Visible="True"></asp:Label><br />
                                 <asp:Label class="badge badge-pill badge-primary" ID="Label5" runat="server" Text="The Humidity is good" Visible="True"></asp:Label><br />
                                 <asp:Label class="badge badge-pill badge-danger" ID="Label6" runat="server" Text="The Humidity is bad" Visible="False"></asp:Label>
                             </center>
@@ -51,7 +44,7 @@
                             <img width="50px" src="images/baro.jpg" />
                                
                         <h4>Pressure</h4>
-                                    <asp:Label ID="Label7" runat="server" Text="78"></asp:Label> <br />
+                                    <asp:Label ID="pressureLabel" runat="server" Text="78"></asp:Label> <br />
                                 <asp:Label class="badge badge-pill badge-primary" ID="Label8" runat="server" Text="The Weather is good" Visible="True"></asp:Label><br />
                                 <asp:Label class="badge badge-pill badge-danger" ID="Label9" runat="server" Text="The Weather is bad" Visible="False"></asp:Label>
                             
@@ -64,7 +57,7 @@
                              <img width="50px" src="images/soilicon.png" />
                               
                         <h4>Quality of Soil</h4>
-                                    <asp:Label ID="Label10" runat="server" Text="263"></asp:Label> <br />
+                                    <asp:Label ID="qualityLabel" runat="server" Text=""></asp:Label> <br />
                                 <asp:Label class="badge badge-pill badge-primary" ID="Label11" runat="server" Text="The Quality is good" Visible="True"></asp:Label><br />
                                 <asp:Label class="badge badge-pill badge-danger" ID="Label12" runat="server" Text="The Quality is bad" Visible="False"></asp:Label>
                             </center>
@@ -76,6 +69,22 @@
                     </div>
                 </div>
              </div>
+         <center>
+             <div class="row">  
+                 <div class="col">
+               
+         <a href="dataanalytics.aspx">For analytics Click here</a>
+                       </div> 
+               </div> 
+              </center> 
+                 <center>
+          <div class="row">
+               <div class="col">
+             <a href="stabilizesituation.aspx">To stabilize the situation click here</a><br><br>
+                    </div>
+                 </div>
+                     </center> 
+             
     <div class="bd-example">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
