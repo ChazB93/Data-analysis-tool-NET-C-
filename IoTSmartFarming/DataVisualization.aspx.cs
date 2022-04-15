@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -17,28 +18,42 @@ namespace IoTSmartFarming
         {
             showTemperature();
             showHumidity();
-            showPressure();
+           // showPressure();
             showQualityOfSoil();
             //GridView1.DataBind();
 
         }
         private decimal getTemperature()
         {
-                SqlConnection conn = new SqlConnection(strcon);
-                if (conn.State == System.Data.ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
-            decimal temperature=0;
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Temperature ORDER BY time desc", conn);
-                SqlDataReader dr = cmd.ExecuteReader(); 
-                while (dr.Read())
+            // SqlConnection conn = new SqlConnection(strcon);
+            //if (conn.State == System.Data.ConnectionState.Closed)
+            //{
+            //  conn.Open();
+            //}
+            //decimal temperature=0;
+            //  SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Temperature ORDER BY time desc", conn);
+            //SqlDataReader dr = cmd.ExecuteReader(); 
+            //while (dr.Read())
+            //{
+            //temperature = dr.GetDecimal(0);
+
+            //}
+            //GridView1.DataBind();
+
+            MySqlConnection connu = new MySqlConnection();
+            connu.ConnectionString = "server=localhost;userid=root;database=ethernet;password=";
+
+            connu.Open();
+            decimal temperature = 0;
+            MySqlCommand cmd = new MySqlCommand("select temperature from data order by id desc limit 1;", connu);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
                 {
                 temperature = dr.GetDecimal(0);
-                    
+
                 }
-                //GridView1.DataBind();
-         return temperature;
+
+                return temperature;
         }
 
 
@@ -57,19 +72,18 @@ namespace IoTSmartFarming
         }
         private decimal getHumidity()
         {
-           
-                SqlConnection conn = new SqlConnection(strcon);
-                if (conn.State == System.Data.ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
-               decimal humidity = 20;
-          
-            SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Humidity ORDER BY time desc", conn);
-            SqlDataReader dr = cmd.ExecuteReader();
+
+            MySqlConnection connu = new MySqlConnection();
+            connu.ConnectionString = "server=localhost;userid=root;database=ethernet;password=";
+
+            connu.Open();
+            decimal humidity = 0;
+            MySqlCommand cmd = new MySqlCommand("select humidity from data order by id desc limit 1;", connu);
+            MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-            humidity = dr.GetDecimal(0);
+                humidity = dr.GetDecimal(0);
+
             }
             return humidity;
         }
@@ -88,61 +102,58 @@ namespace IoTSmartFarming
             }
 
         }
-        private decimal getPressure()
-        {
+        //private decimal getPressure()
+        //{
           
-                SqlConnection conn = new SqlConnection(strcon);
-                if (conn.State == System.Data.ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
-            decimal pressure = 0;
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Pressure ORDER BY time desc", conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                pressure = dr.GetDecimal(0);
+          //      SqlConnection conn = new SqlConnection(strcon);
+            //    if (conn.State == System.Data.ConnectionState.Closed)
+              //  {
+                //    conn.Open();
+                //}
+            //decimal pressure = 0;
+              //  SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from Pressure ORDER BY time desc", conn);
+                //SqlDataReader dr = cmd.ExecuteReader();
+                //while (dr.Read())
+                //{
+                //pressure = dr.GetDecimal(0);
 
-                }
-            // GridView1.DataBind();
-            return pressure;
-        }
-
-
-        private void showPressure()
-        {
-            decimal actPressure = getPressure();
-            pressureLabel.Text = actPressure.ToString();
-
-            if (actPressure > 30 || actPressure < 10)
-            {
-                Label8.Visible = false;
-                Label9.Visible = true;
+//                }
+  //          // GridView1.DataBind();
+    //        return pressure;
+      //  }
 
 
-            }
-        }
+       // private void showPressure()
+        //{
+          //  decimal actPressure = getPressure();
+            //pressureLabel.Text = actPressure.ToString();
+
+//            if (actPressure > 30 || actPressure < 10)
+  //          {
+    //            Label8.Visible = false;
+      //          Label9.Visible = true;
+
+
+        //    }
+        //}
         private decimal getQualityOfSoil()
         {
-          
-                SqlConnection conn = new SqlConnection(strcon);
-                if (conn.State == System.Data.ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
+
+            MySqlConnection connu = new MySqlConnection();
+            connu.ConnectionString = "server=localhost;userid=root;database=ethernet;password=";
+
+            connu.Open();
             decimal quality = 0;
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 value from SoilMoisture ORDER BY time desc", conn);
-                SqlDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
+            MySqlCommand cmd = new MySqlCommand("select moisture from data order by id desc limit 1;", connu);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
                 quality = dr.GetDecimal(0);
 
-                }
-            //GridView1.DataBind();
-
+            }
 
             return quality;
-            }
+        }
 
         private void showQualityOfSoil()
         {

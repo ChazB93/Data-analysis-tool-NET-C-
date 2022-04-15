@@ -8,7 +8,7 @@
                 <div class="card">
                 <div class="card-body">
                           <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <center>
                             <img width="50px" src="images/tempicon.jpg" />
                                 
@@ -25,7 +25,7 @@
                             </center>
                         </div>
 
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                             <center>
                            
                                 <img width="50px" src="images/humicon.jpg" />
@@ -39,7 +39,7 @@
                             </center>
                         </div>
 
-                                <div class="col-md-3">
+                                <%--<div class="col-md-3">
                             <center>
                             <img width="50px" src="images/baro.jpg" />
                                
@@ -50,9 +50,9 @@
                             
 
                             </center>
-                        </div>
+                        </div>--%>
 
-                                <div class="col-md-3">
+                                <div class="col-md-4">
                             <center>
                              <img width="50px" src="images/soilicon.png" />
                               
